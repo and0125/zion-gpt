@@ -1,17 +1,26 @@
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { LayoutGrid, Settings, Users, SettingsIcon as Functions, Layers, Eye, BarChart2, X } from 'lucide-react'
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import {
+  LayoutGrid,
+  Settings,
+  Users,
+  SettingsIcon as Functions,
+  Layers,
+  Eye,
+  BarChart2,
+  X,
+} from "lucide-react";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex h-screen bg-background">
-      {/* Sidebar */}
+      {/* Left Panel */}
       <div className="w-64 border-r bg-muted/10">
         <div className="p-4 border-b">
           <div className="flex items-center gap-2">
             <div className="h-6 w-6 rounded-full bg-primary" />
-            <span className="font-semibold">GenerativeAgent</span>
+            <span className="font-semibold">ZionGPT</span>
           </div>
         </div>
         <ScrollArea className="h-[calc(100vh-64px)]">
@@ -19,15 +28,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <nav className="space-y-2">
               <Button variant="ghost" className="w-full justify-start">
                 <LayoutGrid className="mr-2 h-4 w-4" />
-                Tasks
+                Start New Chat
               </Button>
               <Button variant="ghost" className="w-full justify-start">
                 <Functions className="mr-2 h-4 w-4" />
-                Functions
+                Projects
               </Button>
               <Button variant="ghost" className="w-full justify-start">
                 <Layers className="mr-2 h-4 w-4" />
-                Integrations
+                Chats
               </Button>
               <Button variant="ghost" className="w-full justify-start">
                 <Users className="mr-2 h-4 w-4" />
@@ -46,6 +55,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Button variant="ghost" className="w-full justify-start">
                 <BarChart2 className="mr-2 h-4 w-4" />
                 Performance
+              </Button>
+            </div>
+          </div>
+          <div className="space-y-4 p-4">
+            <div className="pt-4 border-t">
+              <h1>Recents</h1>
+              <Button variant="ghost" className="w-full justify-start">
+                <Eye className="mr-2 h-4 w-4" />
+                Previous Chat 1
+              </Button>
+              <Button variant="ghost" className="w-full justify-start">
+                <BarChart2 className="mr-2 h-4 w-4" />
+                Previous Chat 2
               </Button>
             </div>
           </div>
@@ -89,8 +111,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
         </div>
+        {/* Right Panel End */}
       </div>
     </div>
-  )
+  );
 }
-
